@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "“When stupid ideas work, they become genius ideas.”"
+        pr-message: "“This is a recorded announcement,” it said, “as I’m afraid we’re all out at the moment. The commercial council of Magrathea thanks you for your esteemed visit …” (“A voice from ancient Magrathea!” shouted Zaphod. “Okay, okay,” said Ford.) “… but regrets,” continued the voice, “that the entire planet is temporarily closed for business. Thank you. If you would care to leave your name and the address of a planet where you can be contacted, kindly speak when you hear the tone.”"
