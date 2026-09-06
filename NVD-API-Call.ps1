@@ -5,4 +5,4 @@ $fullURL = "$($baseURL)?cveID=$cveID"
 
 $response = Invoke-RestMethod -Uri $fullURL
 
-$response.vulnerabilities.cve
+$response.vulnerabilities.cve | Format-List *
